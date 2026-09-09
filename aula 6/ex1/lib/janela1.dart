@@ -29,10 +29,11 @@ class Janela1 extends StatelessWidget {
             height: 10,
           ),
           ElevatedButton.icon(
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_right_alt,
             ),
             onPressed: () {
+              print('Iniciando...');
               muda(); // agora pode
             },
             label: const Text('Iniciar'),

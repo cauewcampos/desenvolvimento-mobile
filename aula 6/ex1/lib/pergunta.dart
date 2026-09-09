@@ -3,4 +3,10 @@ class Pergunta {
 
   final String texto;
   final List<String> respostas;
+
+  List<String> Embaralha() {
+    var novaLista = List.of(respostas);
+    novaLista.shuffle();
+    return novaLista;
+  }
 }

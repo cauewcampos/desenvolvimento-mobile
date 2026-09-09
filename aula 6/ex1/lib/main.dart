@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/janela1.dart';
-import 'package:flutter_application_2/janela2.dart';
+
+import 'janela1.dart';
+import 'janela2.dart';
 
 void main() {
   runApp(
-    const Controle(),
+    Controle(),
   );
 }
 
@@ -16,28 +17,27 @@ class Controle extends StatefulWidget {
 }
 
 class _ControleState extends State<Controle> {
-  // Widget? atual;
-  String atual = 'um';
+  var janela = 'um';
 
   // criação de muda
   void muda() {
     setState(() {
-      atual = 'dois';
+      janela = 'dois';
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget? usar;
+    Widget atual = Janela1(muda);
 
-    if (atual == 'um') {
-      usar = Janela1(muda);
+    if (janela == 'um') {
+      atual = Janela1(muda);
     } else {
-      usar = const Janela2();
+      atual = const Janela2();
     }
 
     return MaterialApp(
-      home: usar,
+      home: atual,
     );
   }
 }
